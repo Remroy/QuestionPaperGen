@@ -12,7 +12,6 @@ import javafx.scene.control.Label;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
-import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -37,12 +36,12 @@ public class s1controller implements Initializable{
     private Button button1;
 
     @FXML
-    void onClickFileChose(ActionEvent event) {
+    void fileSelector() {
 
         FileChooser chooser=new FileChooser();
         //FileNameExtensionFilter filter = new FileNameExtensionFilter("Excel Files Only", "xlsx", "xls");
         chooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Excel","*.xlsx","*.xlx"));
-        File f =chooser.showOpenDialog(root.getScene().getWindow());
+        File f =chooser.showOpenDialog(new Stage());
         String filename= f.getAbsolutePath();
         fileName=filename;
         fname=f.getName();
@@ -53,7 +52,7 @@ public class s1controller implements Initializable{
 @FXML
 public FXMLLoader fxmlLoader;
     @FXML
-    void onClick(ActionEvent event) throws IOException{
+    void onClickNext(ActionEvent event) throws IOException{
         fxmlLoader= new FXMLLoader(getClass().getResource("diff_s2.fxml"));
         root= fxmlLoader.load();
         s2controller s2 = fxmlLoader.getController();
@@ -63,8 +62,6 @@ public FXMLLoader fxmlLoader;
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
-
-
     }
 
 
