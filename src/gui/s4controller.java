@@ -6,14 +6,10 @@ package gui;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-import org.apache.poi.ss.usermodel.*;
 
 import algorithms.ExcelParser;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 

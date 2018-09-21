@@ -19,9 +19,9 @@ public class ExcelParser {
         return data;
     }
     public  void displayData() {
-        for (int i=0;i<data.length;i++) {
-            for (int j=0;j<data[i].length;j++) {
-                System.out.print(data[i][j]+" ");
+        for (String[] aData : data) {
+            for (int j = 0; j < aData.length; j++) {
+                System.out.print(aData[j] + " ");
             }
             System.out.println();
         }

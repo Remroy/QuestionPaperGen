@@ -1,5 +1,6 @@
 package gui;
 
+import algorithms.DocGenerator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -52,16 +53,23 @@ public class s1controller implements Initializable{
 @FXML
 public FXMLLoader fxmlLoader;
     @FXML
-    void onClickNext(ActionEvent event) throws IOException{
-        fxmlLoader= new FXMLLoader(getClass().getResource("diff_s2.fxml"));
-        root= fxmlLoader.load();
-        s2controller s2 = fxmlLoader.getController();
-        s2.loadFName(fname, fileName);
+    void onClickNext(ActionEvent event) throws Exception{
+        if (fname!= null) {
+            DocGenerator docGenerator = new DocGenerator();
+            docGenerator.createDoc();
+            fxmlLoader = new FXMLLoader(getClass().getResource("diff_s2.fxml"));
+            root = fxmlLoader.load();
+            s2controller s2 = fxmlLoader.getController();
+            s2.loadFName(fname, fileName);
 
-        Scene scene=new Scene(root, 700, 500);
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
+            Scene scene = new Scene(root, 700, 500);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
+        else {
+            lbl.setText("Please Select an Excel File");
+        }
     }
 
 

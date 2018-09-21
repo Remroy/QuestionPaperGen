@@ -99,15 +99,11 @@ String fileName;
         sliderDiff.setBlockIncrement(10);
 
         // Adding Listener to value property.
-        sliderDiff.valueProperty().addListener(new ChangeListener<Number>() {
+        //
+        sliderDiff.valueProperty().addListener((observable, oldValue, newValue) -> {
 
-            @Override
-            public void changed(ObservableValue<? extends Number> observable, //
-                                Number oldValue, Number newValue) {
-
-                sliderListen.setText("Paper Difficulty: " + (int)(Math.floor((Double) newValue)) + "%");
-                n=(int)(Math.floor((Double) newValue));
-            }
+            sliderListen.setText("Paper Difficulty: " + (int)(Math.floor((Double) newValue)) + "%");
+            n=(int)(Math.floor((Double) newValue));
         });
 
 
