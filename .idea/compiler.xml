@@ -9,8 +9,8 @@
         <module name="QuestionPaperGen" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="10">
-      <module name="QuestionPaperGen" target="10" />
+    <bytecodeTargetLevel target="9">
+      <module name="QuestionPaperGen" target="9.0.1" />
     </bytecodeTargetLevel>
   </component>
 </project>

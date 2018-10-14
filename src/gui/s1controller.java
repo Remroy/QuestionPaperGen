@@ -22,7 +22,6 @@ public class s1controller implements Initializable{
 
     public String fname;
     public  String fileName;
-    Parent root;
 
     @FXML
     private ResourceBundle resources;
@@ -55,10 +54,10 @@ public FXMLLoader fxmlLoader;
     @FXML
     void onClickNext(ActionEvent event) throws Exception{
         if (fname!= null) {
-            DocGenerator docGenerator = new DocGenerator();
-            docGenerator.createDoc();
+            //DocGenerator docGenerator = new DocGenerator();
+            //docGenerator.createDoc();
             fxmlLoader = new FXMLLoader(getClass().getResource("diff_s2.fxml"));
-            root = fxmlLoader.load();
+            Parent root = fxmlLoader.load();
             s2controller s2 = fxmlLoader.getController();
             s2.loadFName(fname, fileName);
 
@@ -78,8 +77,6 @@ public FXMLLoader fxmlLoader;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-
 
     }
 }

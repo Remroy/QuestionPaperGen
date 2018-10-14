@@ -13,6 +13,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class s3controller implements Initializable {
@@ -35,13 +36,14 @@ public class s3controller implements Initializable {
     s4controller s4;
     String fname;
     String test_Name;
-    Integer set_Number;
+    int set_Number;
     int diff_Percentage;
 
     @FXML
     void onClickNext(ActionEvent event) throws IOException {
-        loader= new FXMLLoader(getClass().getResource("load_s4.fxml"));
+        loader= FXMLLoader.load(getClass().getResource("load_s4.fxml"));
         root= loader.load();
+        //AnchorPane anchorPane = (AnchorPane) FXMLLoader.load(getClass().getResource("load_s4.fxml"));
         Scene scene=new Scene(root, 700, 500);
         System.out.println("File Name:"+fname+"\n Test Name:" + test_Name  + "\nSet Number:" + set_Number +"\nDifficulty Percentage:"+diff_Percentage);
         s4=loader.getController();
